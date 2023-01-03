@@ -1,48 +1,48 @@
-import AluminumImage from "../../../assets/livingRoom/Aluminum-Sliding-Windows.jpg";
-import ShowcaseImage from "../../../assets/livingRoom/Showcase.jpg";
-import BlindsImage from "../../../assets/livingRoom/Blinds.jpg";
-import SideTableImage from "../../../assets/livingRoom/Side-Table.jpg";
-import BookShelfImage from "../../../assets/livingRoom/Book-Shelf.jpg";
-import Sofa2ChairsImage from "../../../assets/livingRoom/Sofa-2-Chairs.jpg";
-import CenterTableImage from "../../../assets/livingRoom/Center-Table.jpg";
-import SofaChairFacingChairImage from "../../../assets/livingRoom/Sofa-Chair-Facing-Chair.jpg";
-import ChairImage from "../../../assets/livingRoom/Chair.jpg";
-import SofaChairLShapeImage from "../../../assets/livingRoom/Sofa-Chair-L-Shape.jpg";
-import ChandelierImage from "../../../assets/livingRoom/Chandelier.jpg";
-import SofaFacing2ChairsImage from "../../../assets/livingRoom/Sofa-Facing-2-Chairs.jpg";
-import ClockImage from "../../../assets/livingRoom/Clock.jpg";
-import SofaFacingSofaImage from "../../../assets/livingRoom/Sofa-Facing-Sofa.jpg";
-import ClothesDryerHangerImage from "../../../assets/livingRoom/Clothes-Dryer-Hanger.jpg";
-import SofaLoveSeatImage from "../../../assets/livingRoom/Sofa-Love-Seat.jpg";
-import CoveLightingImage from "../../../assets/livingRoom/Cove-lighting.jpg";
-import SofaSectionalImage from "../../../assets/livingRoom/Sofa-Sectional.jpg";
-import CrockeryUnitImage from "../../../assets/livingRoom/Crockery-Unit.jpg";
-import SofaImage from "../../../assets/livingRoom/Sofa.jpg";
-import CurtainRodImage from "../../../assets/livingRoom/Curtain-Rod.jpg";
-import StorageBalconyImage from "../../../assets/livingRoom/Storage-Balcony.jpg";
-import CurtainsImage from "../../../assets/livingRoom/Curtains.jpg";
-import StorageImage from "../../../assets/livingRoom/Storage.jpg";
-import DiningTableSetImage from "../../../assets/livingRoom/Dinning-Table-Set.jpg";
-import StudyTableWithChairImage from "../../../assets/livingRoom/Study-Table-With-Chair.jpg";
-import ElectricalPointsImage from "../../../assets/livingRoom/Electrical-Points.jpg";
-import TVUnitImage from "../../../assets/livingRoom/TV-Unit.jpg";
-import GrillWorkImage from "../../../assets/livingRoom/Grill-Work.jpg";
-import ThrowPillowsImage from "../../../assets/livingRoom/Throw-Pillows.jpg";
-import UShapeSofaChairsImage from "../../../assets/livingRoom/U-Shape-Sofa-Chairs.jpg";
-import IndianSeatingImage from "../../../assets/livingRoom/Indian-Seating.jpg";
-import USofaFacingSofaChairsImage from "../../../assets/livingRoom/U-Sofa-Facing-Sofa-Chairs.jpg";
-import IndoorPlantsImage from "../../../assets/livingRoom/Indoor-Plants.jpg";
-import USofaLoveSeatChairsImage from "../../../assets/livingRoom/U-Sofa-Love-Seat-Chairs.jpg";
-import LoveSeatImage from "../../../assets/livingRoom/Love-Seat.jpg";
-import WallDecorImage from "../../../assets/livingRoom/Wall-Decor.jpg";
-import MirrorImage from "../../../assets/livingRoom/Mirror.jpg";
-import OttomanImage from "../../../assets/livingRoom/Ottoman.jpg";
-import PaintingImage from "../../../assets/livingRoom/Painting.jpg";
-import PendantLightImage from "../../../assets/livingRoom/Pendant-Light.jpg";
-import PhotoCollageImage from "../../../assets/livingRoom/Photo-collage.jpg";
-import PlantsImage from "../../../assets/livingRoom/Plants.jpg";
-import UPVCSlidingWindowsImage from "../../../assets/livingRoom/uPVC-Sliding-Windows.jpg";
-import RecessedLightImage from "../../../assets/livingRoom/Recessed-light.jpg";
+import AluminumImage from "../assets/livingRoom/Aluminum-Sliding-Windows.jpg";
+import ShowcaseImage from "../assets/livingRoom/Showcase.jpg";
+import BlindsImage from "../assets/livingRoom/Blinds.jpg";
+import SideTableImage from "../assets/livingRoom/Side-Table.jpg";
+import BookShelfImage from "../assets/livingRoom/Book-Shelf.jpg";
+import Sofa2ChairsImage from "../assets/livingRoom/Sofa-2-Chairs.jpg";
+import CenterTableImage from "../assets/livingRoom/Center-Table.jpg";
+import SofaChairFacingChairImage from "../assets/livingRoom/Sofa-Chair-Facing-Chair.jpg";
+import ChairImage from "../assets/livingRoom/Chair.jpg";
+import SofaChairLShapeImage from "../assets/livingRoom/Sofa-Chair-L-Shape.jpg";
+import ChandelierImage from "../assets/livingRoom/Chandelier.jpg";
+import SofaFacing2ChairsImage from "../assets/livingRoom/Sofa-Facing-2-Chairs.jpg";
+import ClockImage from "../assets/livingRoom/Clock.jpg";
+import SofaFacingSofaImage from "../assets/livingRoom/Sofa-Facing-Sofa.jpg";
+import ClothesDryerHangerImage from "../assets/livingRoom/Clothes-Dryer-Hanger.jpg";
+import SofaLoveSeatImage from "../assets/livingRoom/Sofa-Love-Seat.jpg";
+import CoveLightingImage from "../assets/livingRoom/Cove-lighting.jpg";
+import SofaSectionalImage from "../assets/livingRoom/Sofa-Sectional.jpg";
+import CrockeryUnitImage from "../assets/livingRoom/Crockery-Unit.jpg";
+import SofaImage from "../assets/livingRoom/Sofa.jpg";
+import CurtainRodImage from "../assets/livingRoom/Curtain-Rod.jpg";
+import StorageBalconyImage from "../assets/livingRoom/Storage-Balcony.jpg";
+import CurtainsImage from "../assets/livingRoom/Curtains.jpg";
+import StorageImage from "../assets/livingRoom/Storage.jpg";
+import DiningTableSetImage from "../assets/livingRoom/Dinning-Table-Set.jpg";
+import StudyTableWithChairImage from "../assets/livingRoom/Study-Table-With-Chair.jpg";
+import ElectricalPointsImage from "../assets/livingRoom/Electrical-Points.jpg";
+import TVUnitImage from "../assets/livingRoom/TV-Unit.jpg";
+import GrillWorkImage from "../assets/livingRoom/Grill-Work.jpg";
+import ThrowPillowsImage from "../assets/livingRoom/Throw-Pillows.jpg";
+import UShapeSofaChairsImage from "../assets/livingRoom/U-Shape-Sofa-Chairs.jpg";
+import IndianSeatingImage from "../assets/livingRoom/Indian-Seating.jpg";
+import USofaFacingSofaChairsImage from "../assets/livingRoom/U-Sofa-Facing-Sofa-Chairs.jpg";
+import IndoorPlantsImage from "../assets/livingRoom/Indoor-Plants.jpg";
+import USofaLoveSeatChairsImage from "../assets/livingRoom/U-Sofa-Love-Seat-Chairs.jpg";
+import LoveSeatImage from "../assets/livingRoom/Love-Seat.jpg";
+import WallDecorImage from "../assets/livingRoom/Wall-Decor.jpg";
+import MirrorImage from "../assets/livingRoom/Mirror.jpg";
+import OttomanImage from "../assets/livingRoom/Ottoman.jpg";
+import PaintingImage from "../assets/livingRoom/Painting.jpg";
+import PendantLightImage from "../assets/livingRoom/Pendant-Light.jpg";
+import PhotoCollageImage from "../assets/livingRoom/Photo-collage.jpg";
+import PlantsImage from "../assets/livingRoom/Plants.jpg";
+import UPVCSlidingWindowsImage from "../assets/livingRoom/uPVC-Sliding-Windows.jpg";
+import RecessedLightImage from "../assets/livingRoom/Recessed-light.jpg";
 
 export const LivingRoomLevelOfWorkOptions = ["Partial work", "Complete redo"];
 
@@ -54,7 +54,7 @@ export const LivingRoomTypeOfWorkOptions = [
   "Furniture",
   "False Ceiling",
   "Painting",
-  "Sliding windows"
+  "Sliding windows",
 ];
 
 export const NewlyRequiredItemsOptions = {
@@ -70,11 +70,11 @@ export const NewlyRequiredItemsOptions = {
   "Book Shelf": { label: "Book Shelf", src: BookShelfImage },
   "Study Table With Chair": {
     label: "Study Table With Chair",
-    src: StudyTableWithChairImage
+    src: StudyTableWithChairImage,
   },
   Storage: { label: "Storage", src: StorageImage },
   "Crockery Unit": { label: "Crockery Unit", src: CrockeryUnitImage },
-  Showcase: { label: "Showcase", src: ShowcaseImage }
+  Showcase: { label: "Showcase", src: ShowcaseImage },
 };
 
 export const TVUnitLayoutFactorOptions = [
@@ -87,81 +87,81 @@ export const TVUnitLayoutFactorOptions = [
   "Highlight wall behind TV",
   "Electrical sockets",
   "Cable hiding/organiser",
-  "Drawers & Doors"
+  "Drawers & Doors",
 ];
 
 export const SeatingArrangementLayoutOptions = {
   "Sofa + 2 Chairs": { label: "Sofa + 2 Chairs", src: Sofa2ChairsImage },
   "Sofa Chair Facing Chair": {
     label: "Sofa Chair Facing Chair",
-    src: SofaChairFacingChairImage
+    src: SofaChairFacingChairImage,
   },
   "Sofa Chair L Shape": {
     label: "Sofa Chair L Shape",
-    src: SofaChairLShapeImage
+    src: SofaChairLShapeImage,
   },
   "Sofa Facing 2 Chairs": {
     label: "Sofa Facing 2 Chairs",
-    src: SofaFacing2ChairsImage
+    src: SofaFacing2ChairsImage,
   },
   "Sofa Facing Sofa": { label: "Sofa Facing Sofa", src: SofaFacingSofaImage },
   "Sofa + Love Seat": { label: "Sofa + Love Seat", src: SofaLoveSeatImage },
   "Sofa Sectional": { label: "Sofa Sectional", src: SofaSectionalImage },
   "U Shape Sofa Chairs": {
     label: "U Shape Sofa Chairs",
-    src: UShapeSofaChairsImage
+    src: UShapeSofaChairsImage,
   },
   "U Sofa Facing Sofa Chairs": {
     label: "U Sofa Facing Sofa Chairs",
-    src: USofaFacingSofaChairsImage
+    src: USofaFacingSofaChairsImage,
   },
   "U Sofa Love Seat Chairs": {
     label: "U Sofa Love Seat Chairs",
-    src: USofaLoveSeatChairsImage
-  }
+    src: USofaLoveSeatChairsImage,
+  },
 };
 
 export const CeilingLightOptions = {
   "Recessed light": { label: "Recessed light", src: RecessedLightImage },
   "Cove lighting (LED Strip)": {
     label: "Cove lighting (LED Strip)",
-    src: CoveLightingImage
+    src: CoveLightingImage,
   },
   Pendant: { label: "Pendant", src: PendantLightImage },
-  "Chandelier lights": { label: "Chandelier lights", src: ChandelierImage }
+  "Chandelier lights": { label: "Chandelier lights", src: ChandelierImage },
 };
 
 export const LivingRoomBalconyOptions = {
   "Indian Seating": { label: "Indian Seating", src: IndianSeatingImage },
   "Extra Electrical Points": {
     label: "Extra Electrical Points",
-    src: ElectricalPointsImage
+    src: ElectricalPointsImage,
   },
   "Indoor Plants": { label: "Indoor Plants", src: IndoorPlantsImage },
   "Grill Work": { label: "Grill Work", src: GrillWorkImage },
   Storage: { label: "Storage", src: StorageBalconyImage },
   "Ceiling Mount Clothes Dryer Hanger": {
     label: "Ceiling Mount Clothes Dryer Hanger",
-    src: ClothesDryerHangerImage
-  }
+    src: ClothesDryerHangerImage,
+  },
 };
 export const SlidingWindowOptions = {
   "Aluminium Sliding windows": {
     label: "Aluminium Sliding windows",
-    src: AluminumImage
+    src: AluminumImage,
   },
   "uPVC Sliding windows": {
     label: "uPVC Sliding windows",
-    src: UPVCSlidingWindowsImage
-  }
+    src: UPVCSlidingWindowsImage,
+  },
 };
 
 export const BlindOrCurtainOptions = {
   Blinds: { label: "Blinds", src: BlindsImage },
   Curtains: {
     label: "Curtains",
-    src: CurtainsImage
-  }
+    src: CurtainsImage,
+  },
 };
 
 export const LivingRoomAccessoriesOptions = {
@@ -171,5 +171,5 @@ export const LivingRoomAccessoriesOptions = {
   "Photo collage": { label: "Photo collage", src: PhotoCollageImage },
   Painting: { label: "Painting", src: PaintingImage },
   Mirror: { label: "Mirror", src: MirrorImage },
-  Clock: { label: "Clock", src: ClockImage }
+  Clock: { label: "Clock", src: ClockImage },
 };

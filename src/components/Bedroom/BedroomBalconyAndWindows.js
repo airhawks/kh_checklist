@@ -6,25 +6,25 @@ import {
   BlindOrCurtainOptions,
   LivingRoomAccessoriesOptions,
   LivingRoomBalconyOptions,
-  SlidingWindowOptions
+  SlidingWindowOptions,
 } from "../LivingRoom/livingRoomConstants";
 import Hint from "../input/Hint";
 import { Typography } from "@mui/material";
 import CheckboxAnswer from "../input/CheckboxAnswer";
-import MarbleWindowFrameImage from "../../../assets/livingRoom/Marble-Window-Frame.jpg";
+import MarbleWindowFrameImage from "../assets/livingRoom/Marble-Window-Frame.jpg";
 import SubSectionTitle from "../SubSectionTitle";
 
 export default function BedroomBalconyAndWindows({
   data,
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     thingsRequiredForBalcony,
     isNewWindowFrameRequired,
     slidingWindowOption,
     blindsOrCurtains,
-    accessoriesRequired
+    accessoriesRequired,
   } = data;
 
   return (
@@ -75,7 +75,7 @@ export default function BedroomBalconyAndWindows({
                   "Work done by local sliding shop",
                   "Reasonable priced",
                   "Quick delivery & repair",
-                  "Easy to repair"
+                  "Easy to repair",
                 ].map((text) => (
                   <li key={text}>{text}</li>
                 ))}
@@ -92,7 +92,7 @@ export default function BedroomBalconyAndWindows({
                   "Order to be placed with branded company",
                   "Expensive compared to Aluminum",
                   "45 days after order placed",
-                  "Incase any repair, it is hassle"
+                  "Incase any repair, it is hassle",
                 ].map((text) => (
                   <li key={text}>{text}</li>
                 ))}

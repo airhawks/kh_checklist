@@ -3,8 +3,8 @@ import Question from "../input/Question";
 import RadioGroupAnswer from "../input/RadioGroupAnswer";
 import * as React from "react";
 import { RoomType } from "../../constants";
-import KitchenWorkTriangleImage from "../../../assets/kitchen/Kitchen-work-triangle.jpg";
-import OpenKitchenImage from "../../../assets/kitchen/Open-Kitchen.jpg";
+import KitchenWorkTriangleImage from "../assets/kitchen/Kitchen-work-triangle.jpg";
+import OpenKitchenImage from "../assets/kitchen/Open-Kitchen.jpg";
 
 import { useSelector } from "react-redux";
 import { KitchenLayoutsOptions } from "./kitchenConstants";
@@ -13,13 +13,10 @@ import { Typography } from "@mui/material";
 
 export default function KitchenLayout({
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
-  const {
-    doesKnowKitchenWorkTriangle,
-    kitchenLayouts,
-    needOpenKitchen
-  } = useSelector((state) => state.roomsDetail[RoomType.Kitchen].layout);
+  const { doesKnowKitchenWorkTriangle, kitchenLayouts, needOpenKitchen } =
+    useSelector((state) => state.roomsDetail[RoomType.Kitchen].layout);
 
   return (
     <Box>
@@ -77,7 +74,7 @@ export default function KitchenLayout({
                   "Lots of natural light & spaciousness",
                   "Platform acts as a breakfast counter",
                   "Reduces privacy",
-                  "Might incur moving of Electrical/Plumbing"
+                  "Might incur moving of Electrical/Plumbing",
                 ].map((text) => (
                   <li key={text}>{text}</li>
                 ))}

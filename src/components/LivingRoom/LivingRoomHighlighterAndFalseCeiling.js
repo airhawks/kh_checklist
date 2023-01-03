@@ -10,14 +10,14 @@ import { CeilingLightOptions } from "./livingRoomConstants";
 import Hint from "../input/Hint";
 import { Typography } from "@mui/material";
 import CheckboxAnswer from "../input/CheckboxAnswer";
-import HighlighterLivingRoomImage from "../../../assets/livingRoom/Highlighter-Living-room.jpg";
-import FalseCeilingDesignImage from "../../../assets/livingRoom/false-ceiling-design.jpg";
-import FalseCeilingMaterialImage from "../../../assets/livingRoom/false-ceiling-material.jpg";
-import SlabFalseCeilingImage from "../../../assets/livingRoom/slab-false-ceiling.jpg";
+import HighlighterLivingRoomImage from "../assets/livingRoom/Highlighter-Living-room.jpg";
+import FalseCeilingDesignImage from "../assets/livingRoom/false-ceiling-design.jpg";
+import FalseCeilingMaterialImage from "../assets/livingRoom/false-ceiling-material.jpg";
+import SlabFalseCeilingImage from "../assets/livingRoom/slab-false-ceiling.jpg";
 
 export default function LivingRoomHighlighterAndFalseCeiling({
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     needWallHighlighter,
@@ -25,7 +25,7 @@ export default function LivingRoomHighlighterAndFalseCeiling({
     hasFinalizedFalseCeilingDesign,
     hasDecidedFalseCeilingFinishMaterial,
     heightOfRoomSlab,
-    typesOfCeilingLightsRequired
+    typesOfCeilingLightsRequired,
   } = useSelector(
     (state) => state.roomsDetail[RoomType.LivingRoom].highlighterAndFalseCeiling
   );
@@ -61,7 +61,7 @@ export default function LivingRoomHighlighterAndFalseCeiling({
           "Tiles / Dado",
           "Wallpaper",
           "Wall Decals",
-          "Lights"
+          "Lights",
         ]}
         defaultValue={highlightersLiked}
         name="highlightersLiked"

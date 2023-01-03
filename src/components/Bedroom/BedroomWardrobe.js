@@ -7,16 +7,16 @@ import SubSectionTitle from "../SubSectionTitle";
 import RadioGroupAnswer from "../input/RadioGroupAnswer";
 import { Divider, Typography } from "@mui/material";
 import Hint from "../input/Hint";
-import WalkInWardrobeImage from "../../../assets/bedroom/Walk-in-Wardrobe.jpg";
-import WardrobeWithLoftImage from "../../../assets/bedroom/Wardrobe-with-Loft.jpg";
-import SafeWardrobeImage from "../../../assets/bedroom/safe-wardrobe.jpg";
-import AluminumProfileShutterImage from "../../../assets/bedroom/Aluminum-Profile-Shutter.jpg";
-import InternalFinishImage from "../../../assets/bedroom/Internal-Finish.jpg";
+import WalkInWardrobeImage from "../assets/bedroom/Walk-in-Wardrobe.jpg";
+import WardrobeWithLoftImage from "../assets/bedroom/Wardrobe-with-Loft.jpg";
+import SafeWardrobeImage from "../assets/bedroom/safe-wardrobe.jpg";
+import AluminumProfileShutterImage from "../assets/bedroom/Aluminum-Profile-Shutter.jpg";
+import InternalFinishImage from "../assets/bedroom/Internal-Finish.jpg";
 
 export default function BedroomWardrobe({
   data,
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     doorType,
@@ -28,7 +28,7 @@ export default function BedroomWardrobe({
     selectPremiumAccessories,
     aluminumProfileShutterRequired,
     externalFinish,
-    internalFinish
+    internalFinish,
   } = data;
   return (
     <Box>
@@ -76,7 +76,7 @@ export default function BedroomWardrobe({
         options={[
           "7 feet Wardrobe with upper empty space",
           "7 feet Wardrobe with Loft",
-          "Wardrobe height till ceiling"
+          "Wardrobe height till ceiling",
         ]}
         value={heightOfWardrobe}
         name="heightOfWardrobe"
@@ -108,7 +108,7 @@ export default function BedroomWardrobe({
           "Marine Plywood ( M & C)",
           "MR (moisture resistant) Plywood (M & C)",
           "Commercial Plywood (M & C)",
-          "MDF or Pre-laminated particle board (only in M)"
+          "MDF or Pre-laminated particle board (only in M)",
         ]}
         value={materialType}
         name="materialType"
@@ -144,7 +144,7 @@ export default function BedroomWardrobe({
           "Drawers to store makeup and skincare",
           "Shallow drawers for jewellery",
           "Fixed shelves",
-          "Pull-out shelves"
+          "Pull-out shelves",
         ]}
         defaultValue={requiredBoxesAndShelves}
         name="requiredBoxesAndShelves"
@@ -159,7 +159,7 @@ export default function BedroomWardrobe({
           "Big Headboard",
           "Small Headboard",
           "Upholstered",
-          "Traditional Wooden Carved headboard"
+          "Traditional Wooden Carved headboard",
         ]}
         defaultValue={selectPremiumAccessories}
         name="selectPremiumAccessories"
@@ -253,7 +253,7 @@ export default function BedroomWardrobe({
           "Acrylic Shutters",
           "PU Shutters ",
           "Veneers Shutters",
-          "Lacquered glass (Back painted)"
+          "Lacquered glass (Back painted)",
         ]}
         value={externalFinish}
         name="externalFinish"
