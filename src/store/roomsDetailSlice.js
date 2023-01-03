@@ -6,14 +6,14 @@ export const initialBedroomState = {
     levelOfWorkRequired: "",
     typeOfWorkRequired: [],
     sqftArea: "",
-    height: ""
+    height: "",
   },
   design: {
     necessities: [],
     wishlistItems: [],
     newFurnitureRequired: [],
     newAccessoriesRequired: [],
-    newElectricalItemsRequired: []
+    newElectricalItemsRequired: [],
   },
   bed: {
     sizeOfBed: "",
@@ -22,7 +22,7 @@ export const initialBedroomState = {
     typeOfStorage: "",
     budgetForMattress: "",
     typeOfMattress: "",
-    thicknessOfMattress: ""
+    thicknessOfMattress: "",
   },
   wardrobe: {
     doorType: "",
@@ -34,7 +34,7 @@ export const initialBedroomState = {
     selectPremiumAccessories: [],
     aluminumProfileShutterRequired: "",
     externalFinish: "",
-    internalFinish: ""
+    internalFinish: "",
   },
   highlighterAndFalseCeiling: {
     needWallHighlighter: "",
@@ -42,15 +42,15 @@ export const initialBedroomState = {
     hasFinalizedFalseCeilingDesign: "",
     hasDecidedFalseCeilingFinishMaterial: "",
     heightOfRoomSlab: "",
-    typesOfCeilingLightsRequired: []
+    typesOfCeilingLightsRequired: [],
   },
   balconyAndWindows: {
     thingsRequiredForBalcony: [],
     isNewWindowFrameRequired: "",
     slidingWindowOption: "",
     blindsOrCurtains: "",
-    accessoriesRequired: []
-  }
+    accessoriesRequired: [],
+  },
 };
 
 export const initialBathroomState = {
@@ -60,16 +60,16 @@ export const initialBathroomState = {
     shapeOfBathroom: "",
     sqftArea: "",
     height: "",
-    newlyRequiredItems: []
+    newlyRequiredItems: [],
   },
   showerArea: {
     showerMixedRequired: "",
     wantToConsiderShowerPanel: "",
-    showerEnclosureType: ""
+    showerEnclosureType: "",
   },
   WCArea: {
     waterClosetOption: "",
-    flushingSystem: ""
+    flushingSystem: "",
   },
   other: {
     waterProofingRequired: "",
@@ -77,8 +77,8 @@ export const initialBathroomState = {
     newWallTilingRequired: "",
     waterSavingFittings: "",
     fitForElderlyUse: "",
-    fitForpeopleWithDisabilitiesUse: ""
-  }
+    fitForpeopleWithDisabilitiesUse: "",
+  },
 };
 
 const initialState = {
@@ -88,23 +88,23 @@ const initialState = {
       typeOfWorkRequired: [],
       movingWork: [],
       sqftArea: "",
-      height: ""
+      height: "",
     },
     layout: {
       doesKnowKitchenWorkTriangle: "",
       kitchenLayouts: "",
-      needOpenKitchen: ""
+      needOpenKitchen: "",
     },
     appliances: {
       itemsToPurchase: [],
-      itemsToBeKeptInKitchen: []
+      itemsToBeKeptInKitchen: [],
     },
     modularKitchen: {
       majorPartsRequired: [],
       typeOfDrawersHardware: "",
       cabinets: [],
       countertop: "",
-      shutterFinishType: ""
+      shutterFinishType: "",
     },
     hobChimneyAndElectricals: {
       cookingGasApplianceType: "",
@@ -113,8 +113,8 @@ const initialState = {
       typeOfChimney: "",
       factorsForChimneySelection: [],
       lightingAndElectricalsRequired: [],
-      electricalOutlets: []
-    }
+      electricalOutlets: [],
+    },
   },
   [RoomType.LivingRoom]: {
     workRequired: {
@@ -122,14 +122,14 @@ const initialState = {
       typeOfWorkRequired: [],
       sqftArea: "",
       height: "",
-      newlyRequiredItems: []
+      newlyRequiredItems: [],
     },
     layout: {
       hasPlannedFocalPoint: "",
       hasPlannedTrafficFlow: "",
       hasPlannedCoversationArea: "",
-      seatingArrangementStyles: "",
-      factorsForDesigningTVUnit: ""
+      seatingArrangementStyles: [],
+      factorsForDesigningTVUnit: [],
     },
     highlighterAndFalseCeiling: {
       needWallHighlighter: "",
@@ -137,15 +137,15 @@ const initialState = {
       hasFinalizedFalseCeilingDesign: "",
       hasDecidedFalseCeilingFinishMaterial: "",
       heightOfRoomSlab: "",
-      typesOfCeilingLightsRequired: []
+      typesOfCeilingLightsRequired: [],
     },
     balconyAndWindows: {
       thingsRequiredForBalcony: [],
       isNewWindowFrameRequired: "",
       slidingWindowOption: "",
       blindsOrCurtains: "",
-      accessoriesRequired: []
-    }
+      accessoriesRequired: [],
+    },
   },
   [RoomType.CommonBathroom]: initialBathroomState,
   [RoomType.Bedroom]: {
@@ -153,7 +153,7 @@ const initialState = {
   },
   [RoomType.Bathroom]: {
     // roomName: roomState similar to initialBathroomState
-  }
+  },
 };
 
 export const roomsDetailSlice = createSlice({
@@ -173,15 +173,12 @@ export const roomsDetailSlice = createSlice({
           : initialBathroomState);
       state[roomType][roomName][step][key] = value;
     },
-    reset: () => initialState
-  }
+    reset: () => initialState,
+  },
 });
 
 // Action creators are generated for each case reducer function
-export const {
-  setStandardRoomValues,
-  setBedOrBathRoomValues,
-  reset
-} = roomsDetailSlice.actions;
+export const { setStandardRoomValues, setBedOrBathRoomValues, reset } =
+  roomsDetailSlice.actions;
 
 export default roomsDetailSlice.reducer;

@@ -18,19 +18,20 @@ export default function CheckboxAnswer({
     test: {
       label: "value",
       checked: true,
-      src: `https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e`
+      src: `https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e`,
     },
-    test2: { label: "another value", checked: true }
+    test2: { label: "another value", checked: true },
   },
   onChange = () => {},
   textHint,
   name: propName,
   formLabel,
-  defaultValue = [],
-  inline = true
+  defaultValue = [],  
+  inline = true,
 }) {
   const keys = Object.keys(options);
-  const [selectedItems, setSelectedItems] = React.useState(defaultValue);
+  const initialValue = Array.isArray(defaultValue) ? defaultValue : [];
+  const [selectedItems, setSelectedItems] = React.useState(initialValue);
   const handleChange = (event) => {
     const { checked, name } = event.target;
     const updatedSelectedItems = checked
@@ -56,7 +57,7 @@ export default function CheckboxAnswer({
                   ? {}
                   : {
                       mb: 3,
-                      maxWidth: 216
+                      maxWidth: 216,
                     }
               }
               key={key}
@@ -75,7 +76,7 @@ export default function CheckboxAnswer({
                         height: 216,
                         width: 216,
                         alignItems: "center",
-                        justifyContent: "center"
+                        justifyContent: "center",
                       }}
                       image={options[key].src}
                       title="green iguana"
@@ -84,7 +85,7 @@ export default function CheckboxAnswer({
                       sx={{
                         pt: 2,
                         mb: -2,
-                        maxWidth: 216
+                        maxWidth: 216,
                       }}
                     >
                       <Typography
@@ -92,7 +93,7 @@ export default function CheckboxAnswer({
                         component="div"
                         align="center"
                         sx={{
-                          w: 1
+                          w: 1,
                         }}
                       >
                         {label}

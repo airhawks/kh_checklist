@@ -29,6 +29,13 @@ export default function LivingRoomLayout({
     factorsForDesigningTVUnit,
   } = useSelector((state) => state.roomsDetail[RoomType.LivingRoom].layout);
 
+  console.log(
+    hasPlannedFocalPoint,
+    hasPlannedTrafficFlow,
+    hasPlannedCoversationArea,
+    seatingArrangementStyles,
+    factorsForDesigningTVUnit
+  );
   return (
     <Box>
       <Typography sx={{ mt: 4 }} variant="h5" component="div">

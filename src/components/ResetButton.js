@@ -5,6 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import { useDispatch } from "react-redux";
 import DialogTitle from "@mui/material/DialogTitle";
 import { reset } from "../store/projectIntakeSlice";
+import { reset as resetRooms } from "../store/roomsDetailSlice";
 import AddIcon from "@mui/icons-material/Add";
 
 export default function ResetButton() {
@@ -20,6 +21,7 @@ export default function ResetButton() {
   };
   const onClickYes = () => {
     dispatch(reset());
+    dispatch(resetRooms());
     handleClose();
   };
 
