@@ -15,7 +15,7 @@ function MainSectionText({ text }) {
         sx={{
           p: 1,
           color: theme.palette.primary.contrastText,
-          bgcolor: theme.palette.primary.light
+          bgcolor: theme.palette.primary.light,
         }}
         variant="h6"
         component="div"
@@ -34,7 +34,7 @@ function SubSectionText({ text }) {
       sx={{
         pl: 1,
         color: theme.palette.secondary.contrastText,
-        bgcolor: theme.palette.primary.light
+        bgcolor: theme.palette.primary.light,
       }}
     >
       {text}
@@ -50,13 +50,13 @@ function AnswerText({ text }) {
   return (
     <Box
       sx={{
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
       }}
     >
       {Array.isArray(text) ? (
         <ul style={{ marginTop: 8 }}>
-          {text.map((text) => (
-            <Typography variant="body2" key={text}>
+          {text.map((text, index) => (
+            <Typography variant="body2" key={index + text}>
               <li>{text}</li>
             </Typography>
           ))}
@@ -75,7 +75,7 @@ function List({ children }) {
     <Box
       sx={{
         px: 2,
-        py: 1
+        py: 1,
       }}
     >
       {children}
@@ -87,7 +87,7 @@ function ListItem({ children }) {
     <Box
       sx={{
         pl: 2,
-        py: 1
+        py: 1,
       }}
     >
       {children}
@@ -121,12 +121,14 @@ export default function Summary({
   title = "Summary",
   data,
   roomType,
-  isProjectIntake = false
+  isProjectIntake = false,
 }) {
   const questions = isProjectIntake
     ? AllQuestions.project
     : AllQuestions.roomsDetail[roomType];
-  // console.log(questions, data, roomType, isProjectIntake);
+
+  const Steps = isProjectIntake ? AllSteps.projectIntake : AllSteps[roomType];
+  console.log(questions, data, roomType, isProjectIntake);
   return (
     <>
       <PageHeader name={title} />
@@ -135,7 +137,7 @@ export default function Summary({
           {Object.keys(questions).map((mainSectionKey) => {
             return (
               <ListItem key={mainSectionKey}>
-                <MainSectionText text={AllSteps[roomType][mainSectionKey]} />
+                <MainSectionText text={Steps[mainSectionKey]} />
 
                 {questions[mainSectionKey]._subSections != null ? (
                   Object.keys(questions[mainSectionKey]._subSections).map(

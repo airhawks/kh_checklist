@@ -4,7 +4,7 @@ export const BathroomSteps = {
   workRequired: "Work Required",
   showerArea: "Shower Area",
   WCArea: "WC Area",
-  other: "Other"
+  other: "Other",
 };
 
 export const BedroomSteps = {
@@ -13,14 +13,14 @@ export const BedroomSteps = {
   bed: "Bed",
   wardrobe: "Wardrobe",
   highlighterAndFalseCeiling: "Highlighter & False Ceiling",
-  balconyAndWindows: "Balcony & Windows"
+  balconyAndWindows: "Balcony & Windows",
 };
 
 export const LivingRoomSteps = {
   workRequired: "Work Required",
   layout: "Design - Layout",
   highlighterAndFalseCeiling: "Highlighter & False Ceiling",
-  balconyAndWindows: "Balcony & Windows"
+  balconyAndWindows: "Balcony & Windows",
 };
 
 export const KitchenSteps = {
@@ -28,7 +28,15 @@ export const KitchenSteps = {
   layout: "Layout",
   appliances: "Appliances",
   modularKitchen: "Modular Kitchen",
-  hobChimneyAndElectricals: "Hob, Chimney & Electricals"
+  hobChimneyAndElectricals: "Hob, Chimney & Electricals",
+};
+
+export const ProjectIntakeSteps = {
+  projectType: "Project Type",
+  location: "Location",
+  newOrOld: "New or Old",
+  designAndPlanning: "Design & Planning",
+  scopeOfWork: "Scope of Work",
 };
 
 export const AllSteps = {
@@ -36,5 +44,6 @@ export const AllSteps = {
   [RoomType.CommonBathroom]: BathroomSteps,
   [RoomType.LivingRoom]: LivingRoomSteps,
   [RoomType.Kitchen]: KitchenSteps,
-  [RoomType.Bedroom]: BedroomSteps
+  [RoomType.Bedroom]: BedroomSteps,
+  projectIntake: ProjectIntakeSteps,
 };

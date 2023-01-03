@@ -6,18 +6,12 @@ export default function useIsAllSummaryVisible() {
     [RoomType.Kitchen]: kitchenStatus,
     [RoomType.LivingRoom]: livingRoomStatus,
     roomsAndBathroomsStatus,
-    [RoomType.CommonBathroom]: commonBathroomStatus
+    [RoomType.CommonBathroom]: commonBathroomStatus,
   } = useSelector((state) => state.project.status);
   const { roomNamesAndBathrooms, hasCommonBathroom } = useSelector(
     (state) => state.project.projectType
   );
 
-  console.log(
-    kitchenStatus,
-    livingRoomStatus,
-    commonBathroomStatus,
-    roomsAndBathroomsStatus
-  );
   if (
     kitchenStatus === Status.Completed &&
     livingRoomStatus === Status.Completed &&

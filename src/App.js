@@ -28,9 +28,7 @@ export default function App() {
         flexDirection: "column",
         alignItems: "center",
         maxWidth: 760,
-        px: 4
-        // width: "100vw"
-        // justifyContent: "flex-start",
+        px: 4,
       }}
     >
       <Box
@@ -38,7 +36,7 @@ export default function App() {
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          width: 1
+          width: 1,
         }}
       >
         {intakeStatus === Status.Started ? (
@@ -48,9 +46,10 @@ export default function App() {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-end",
+              justifyContent:
+                intakeStatus === Status.Completed ? "flex-end" : "center",
               width: 1,
-              mb: 2
+              mb: 2,
             }}
           >
             <Button
@@ -62,7 +61,7 @@ export default function App() {
                 ? "Project Details"
                 : "Start Project Intake"}
             </Button>
-            <ResetButton />
+            {intakeStatus === Status.Completed ? <ResetButton /> : null}
 
             {isAllSummaryVisible ? (
               <Button onClick={() => setShowSummary(true)}>Summary</Button>

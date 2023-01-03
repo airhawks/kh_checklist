@@ -8,11 +8,15 @@ import NewOrOldStep from "./NewOrOldStep";
 import DesignAndPlanningStep from "./DesignAndPlanningStep";
 import ScopeOfWorkStep from "./ScopeOfWorkStep";
 import Summary from "../Summary";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setFormValues } from "../../store/projectIntakeSlice";
+import { AllSteps } from "../../stepsConstants";
 import { Status } from "../../constants";
 
 function IntakeSteps({ activeStep }) {
+  const { projectType, location, newOrOld, designAndPlanning, scopeOfWork } =
+    useSelector((state) => state.project);
+
   switch (activeStep) {
     case 0:
       return <ProjectTpeStep />;
@@ -25,7 +29,25 @@ function IntakeSteps({ activeStep }) {
     case 4:
       return <ScopeOfWorkStep />;
     case 5:
-    // return <Summary />;
+      return (
+        <Summary
+          data={{
+            projectType: {
+              ...projectType,
+              roomNamesAndBathrooms: projectType.roomNamesAndBathrooms.map(
+                ({ hasBathroom, roomName }) =>
+                  `${roomName}
+                    ${hasBathroom ? " with attached bathroom" : ""}`
+              ),
+            },
+            location,
+            newOrOld,
+            designAndPlanning,
+            scopeOfWork,
+          }}
+          isProjectIntake
+        />
+      );
     default:
       return <Box>{activeStep}</Box>;
   }
@@ -44,13 +66,7 @@ export default function IntakeForm() {
     <Box>
       <PageHeader name="Project Details" />
       <PageStepper
-        steps={[
-          "Project Type",
-          "Location",
-          "New or Old",
-          "Design & Planning",
-          "Scope of Work"
-        ]}
+        steps={Object.values(AllSteps.projectIntake)}
         onComplete={() => onChangeStatus(Status.Completed)}
         renderStep={renderStep}
       />
