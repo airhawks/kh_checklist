@@ -4,8 +4,8 @@ import * as React from "react";
 import RadioGroupAnswer from "../input/RadioGroupAnswer";
 import { Typography } from "@mui/material";
 import Hint from "../input/Hint";
-import FlowRestrictorImage from "../../../assets/bathroom/flow-restrictor.jpg";
-import GrabBarImage from "../../../assets/bathroom/grab-bar.jpg";
+import FlowRestrictorImage from "../assets/bathroom/flow-restrictor.jpg";
+import GrabBarImage from "../assets/bathroom/grab-bar.jpg";
 
 export default function BathroomOther({ data, handleInputChange }) {
   const {
@@ -14,7 +14,7 @@ export default function BathroomOther({ data, handleInputChange }) {
     newWallTilingRequired,
     waterSavingFittings,
     fitForElderlyUse,
-    fitForpeopleWithDisabilitiesUse
+    fitForpeopleWithDisabilitiesUse,
   } = data;
   return (
     <Box>
@@ -73,7 +73,7 @@ export default function BathroomOther({ data, handleInputChange }) {
                   <b>Flow restrictors</b> - adjusts flow of water + gives
                   voluminous flow 2) air shower - air mixed with water to make
                   water drops lighter but voluminous
-                </Typography>
+                </Typography>,
               ].map((text, index) => (
                 <li key={index}>{text}</li>
               ))}
@@ -103,7 +103,7 @@ export default function BathroomOther({ data, handleInputChange }) {
                 <Typography variant="body2" component="div">
                   <b>Folding seat</b> - While taking shower, using towel &
                   changing clothes
-                </Typography>
+                </Typography>,
               ].map((text, index) => (
                 <li key={index}>{text}</li>
               ))}

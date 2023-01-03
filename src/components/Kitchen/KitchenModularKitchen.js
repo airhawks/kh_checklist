@@ -11,25 +11,25 @@ import {
   CabinetsOptions,
   CounterTopOptions,
   PartsOfModularKitchenOptions,
-  ShutterFinishOptions
+  ShutterFinishOptions,
 } from "./kitchenConstants";
 import Hint from "../input/Hint";
 import { Divider, Typography } from "@mui/material";
-import KitchenPartsImage from "../../../assets/kitchen/kitchen-parts.jpg";
-import InnotechDrawersImage from "../../../assets/kitchen/Innotech-Drawers.jpg";
-import TandemDrawersImage from "../../../assets/kitchen/Tandem-Drawers.jpg";
-import PlainBasketImage from "../../../assets/kitchen/Plain-Basket.jpg";
+import KitchenPartsImage from "../assets/kitchen/kitchen-parts.jpg";
+import InnotechDrawersImage from "../assets/kitchen/Innotech-Drawers.jpg";
+import TandemDrawersImage from "../assets/kitchen/Tandem-Drawers.jpg";
+import PlainBasketImage from "../assets/kitchen/Plain-Basket.jpg";
 
 export default function KitchenModularKitchen({
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     majorPartsRequired,
     typeOfDrawersHardware,
     cabinets,
     countertop,
-    shutterFinishType
+    shutterFinishType,
   } = useSelector(
     (state) => state.roomsDetail[RoomType.Kitchen].modularKitchen
   );
@@ -45,7 +45,7 @@ export default function KitchenModularKitchen({
         options={[
           "Wall Unit Cabinets",
           "Base Unit Cabinets",
-          "Tall Unit Cabinets"
+          "Tall Unit Cabinets",
         ]}
         defaultValue={majorPartsRequired}
         name="majorPartsRequired"
@@ -80,7 +80,7 @@ export default function KitchenModularKitchen({
         options={[
           "SS (Steel) Baskets",
           "Tandem (Hafele)",
-          "Innotech (Hettich)"
+          "Innotech (Hettich)",
         ]}
         value={typeOfDrawersHardware}
         name="typeOfDrawersHardware"

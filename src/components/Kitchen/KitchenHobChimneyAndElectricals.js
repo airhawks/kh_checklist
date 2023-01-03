@@ -15,15 +15,15 @@ import {
   FactorsForChimneyOptions,
   KitchenLevelOfWorkOptions,
   LightingAndElectricalsOptions,
-  MovingWorkOptions
+  MovingWorkOptions,
 } from "./kitchenConstants";
 import Hint, { HintImagePosition } from "../input/Hint";
 import { Divider, Typography } from "@mui/material";
-import CookingRangeImage from "../../../assets/kitchen/Cooking-Range.jpg";
+import CookingRangeImage from "../assets/kitchen/Cooking-Range.jpg";
 
 export default function KitchenHobChimneyAndElectricals({
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     cookingGasApplianceType,
@@ -32,7 +32,7 @@ export default function KitchenHobChimneyAndElectricals({
     typeOfChimney,
     factorsForChimneySelection,
     lightingAndElectricalsRequired,
-    electricalOutlets
+    electricalOutlets,
   } = useSelector(
     (state) => state.roomsDetail[RoomType.Kitchen].hobChimneyAndElectricals
   );

@@ -5,14 +5,14 @@ import { BathroomShowerEnclosureOptions } from "./bathroomConstants";
 import RadioGroupAnswer from "../input/RadioGroupAnswer";
 import { Typography } from "@mui/material";
 import Hint from "../input/Hint";
-import ShowerPanelImage from "../../../assets/bathroom/shower-panel.jpg";
-import MixerImage from "../../../assets/bathroom/mixer.jpg";
+import ShowerPanelImage from "../assets/bathroom/shower-panel.jpg";
+import MixerImage from "../assets/bathroom/mixer.jpg";
 
 export default function BathroomShowerArea({ data, handleInputChange }) {
   const {
     showerMixedRequired,
     wantToConsiderShowerPanel,
-    showerEnclosureType
+    showerEnclosureType,
   } = data;
   return (
     <Box>
@@ -64,7 +64,7 @@ export default function BathroomShowerArea({ data, handleInputChange }) {
               {[
                 "It separates Dry & Wet area - Less cleaning",
                 "It keeps shower area separate - Looks modern",
-                "Saves space - door can be sliding or hinged"
+                "Saves space - door can be sliding or hinged",
               ].map((text) => (
                 <li key={text}>{text}</li>
               ))}

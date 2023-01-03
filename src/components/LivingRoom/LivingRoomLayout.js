@@ -8,25 +8,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { setStandardRoomValues } from "../../store/roomsDetailSlice";
 import {
   SeatingArrangementLayoutOptions,
-  TVUnitLayoutFactorOptions
+  TVUnitLayoutFactorOptions,
 } from "./livingRoomConstants";
 import Hint from "../input/Hint";
 import { Divider, Typography } from "@mui/material";
 import CheckboxAnswer from "../input/CheckboxAnswer";
-import LivingRoomFocalPointImage from "../../../assets/livingRoom/living-room-focal-point.jpg";
-import LivingRoomTrafficFlowImage from "../../../assets/livingRoom/living-room-traffic-flow.jpg";
-import ConversationAreaImage from "../../../assets/livingRoom/conversation-area.jpg";
+import LivingRoomFocalPointImage from "../assets/livingRoom/living-room-focal-point.jpg";
+import LivingRoomTrafficFlowImage from "../assets/livingRoom/living-room-traffic-flow.jpg";
+import ConversationAreaImage from "../assets/livingRoom/conversation-area.jpg";
 
 export default function LivingRoomLayout({
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     hasPlannedFocalPoint,
     hasPlannedTrafficFlow,
     hasPlannedCoversationArea,
     seatingArrangementStyles,
-    factorsForDesigningTVUnit
+    factorsForDesigningTVUnit,
   } = useSelector((state) => state.roomsDetail[RoomType.LivingRoom].layout);
 
   return (
@@ -47,7 +47,7 @@ export default function LivingRoomLayout({
                 {[
                   "Focal Point (also known as Eye magnet)",
                   "Traffic Flow",
-                  "Conversation Area"
+                  "Conversation Area",
                 ].map((text) => (
                   <li key={text}>{text}</li>
                 ))}

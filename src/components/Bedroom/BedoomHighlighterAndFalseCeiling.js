@@ -7,16 +7,16 @@ import Hint from "../input/Hint";
 import { Typography } from "@mui/material";
 import CheckboxAnswer from "../input/CheckboxAnswer";
 
-import HighlighterBedroomImage from "../../../assets/bedroom/Highlighter-Bedroom.jpg";
-import FalseCeilingDesignImage from "../../../assets/bedroom/false-ceiling-design.jpg";
-import FalseCeilingMaterialImage from "../../../assets/bedroom/false-ceiling-material.jpg";
-import SlabFalseCeilingImage from "../../../assets/bedroom/slab-false-ceiling.jpg";
+import HighlighterBedroomImage from "../assets/bedroom/Highlighter-Bedroom.jpg";
+import FalseCeilingDesignImage from "../assets/bedroom/false-ceiling-design.jpg";
+import FalseCeilingMaterialImage from "../assets/bedroom/false-ceiling-material.jpg";
+import SlabFalseCeilingImage from "../assets/bedroom/slab-false-ceiling.jpg";
 import SubSectionTitle from "../SubSectionTitle";
 
 export default function BedoomHighlighterAndFalseCeiling({
   data,
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   const {
     needWallHighlighter,
@@ -24,7 +24,7 @@ export default function BedoomHighlighterAndFalseCeiling({
     hasFinalizedFalseCeilingDesign,
     hasDecidedFalseCeilingFinishMaterial,
     heightOfRoomSlab,
-    typesOfCeilingLightsRequired
+    typesOfCeilingLightsRequired,
   } = data;
 
   return (
@@ -57,7 +57,7 @@ export default function BedoomHighlighterAndFalseCeiling({
           "Tiles / Dado",
           "Wallpaper",
           "Wall Decals",
-          "Lights"
+          "Lights",
         ]}
         defaultValue={highlightersLiked}
         name="highlightersLiked"
