@@ -8,7 +8,6 @@ import { setFormValues } from "./store/projectIntakeSlice";
 import { Status } from "./constants";
 import EditIcon from "@mui/icons-material/Edit";
 import RoomsManager from "./RoomsManager";
-import useIsAllSummaryVisible from "./hooks/useIsAllSummaryVisible";
 import ResetButton from "./components/ResetButton";
 import * as React from "react";
 import ProjectSummary from "./ProjectSummary";
@@ -20,7 +19,7 @@ export default function App() {
   const onChangeStatus = (status) => {
     dispatch(setFormValues(["status", "intakeStatus", status]));
   };
-  const isAllSummaryVisible = useIsAllSummaryVisible();
+
   return (
     <Box
       sx={{
@@ -61,10 +60,11 @@ export default function App() {
                 ? "Project Details"
                 : "Start Project Intake"}
             </Button>
-            {intakeStatus === Status.Completed ? <ResetButton /> : null}
-
-            {isAllSummaryVisible ? (
-              <Button onClick={() => setShowSummary(true)}>Summary</Button>
+            {intakeStatus === Status.Completed ? (
+              <>
+                <ResetButton />{" "}
+                <Button onClick={() => setShowSummary(true)}>Summary</Button>
+              </>
             ) : null}
           </Box>
         )}
