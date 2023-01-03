@@ -18,7 +18,7 @@ function RoomEditorComponent({
   roomType,
   onCompleted,
   handleInputChange,
-  onSelectionChange
+  onSelectionChange,
 }) {
   switch (roomType) {
     case RoomType.LivingRoom:
@@ -73,13 +73,13 @@ export default function RoomEditor({
   selectedRoom,
   onExit,
   onChangeRoomStatus,
-  onChangeStatus
+  onChangeStatus,
 }) {
   const {
     userFacingRoomName,
     roomName,
     roomType,
-    isBedroomOrAttachedBathroom
+    isBedroomOrAttachedBathroom,
   } = useSelectedRoomDetails(selectedRoom);
   const dispatch = useDispatch();
 
@@ -118,14 +118,17 @@ export default function RoomEditor({
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          mb: 4
+          mb: 4,
         }}
       >
         <Typography variant="h5">{userFacingRoomName}</Typography>
-        <Box sx={{ flex: "1 1 auto" }} />
-
-        <Button onClick={() => dispatch(reset())}>Reset</Button>
-        <Button onClick={onExit}>Exit Editing</Button>
+        {process.env.NODE_ENV !== "production" ? (
+          <>
+            <Box sx={{ flex: "1 1 auto" }} />
+            <Button onClick={() => dispatch(reset())}>Reset</Button>
+            <Button onClick={onExit}>Exit Editing</Button>
+          </>
+        ) : null}
       </Box>
 
       <RoomEditorComponent
