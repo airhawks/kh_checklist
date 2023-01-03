@@ -14,11 +14,31 @@ export default function ProjectSummary({ onExit }) {
   const { roomNamesAndBathrooms, hasCommonBathroom } = useSelector(
     (state) => state.project.projectType
   );
+  const { projectType, location, newOrOld, designAndPlanning, scopeOfWork } =
+    useSelector((state) => state.project);
   // console.log(selectedRoom, roomType, roomName);
 
   return (
     <Box sx={{ width: 1 }}>
       <SummaryPageHeader onExit={onExit} />
+      <Summary
+        title="Project Details"
+        data={{
+          projectType: {
+            ...projectType,
+            roomNamesAndBathrooms: projectType.roomNamesAndBathrooms.map(
+              ({ hasBathroom, roomName }) =>
+                `${roomName}
+                    ${hasBathroom ? " with attached bathroom" : ""}`
+            ),
+          },
+          location,
+          newOrOld,
+          designAndPlanning,
+          scopeOfWork,
+        }}
+        isProjectIntake
+      />
       <RoomSummary selectedRoom={RoomType.LivingRoom} />
       <RoomSummary selectedRoom={RoomType.Kitchen} />
       {roomNamesAndBathrooms.map(({ hasBathroom }, index) => (
@@ -26,7 +46,7 @@ export default function ProjectSummary({ onExit }) {
           <RoomSummary
             selectedRoom={{
               index,
-              roomType: RoomType.Bedroom
+              roomType: RoomType.Bedroom,
             }}
           />
           {hasBathroom ? (
