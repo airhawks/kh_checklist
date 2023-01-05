@@ -28,6 +28,7 @@ export default function App() {
         alignItems: "center",
         maxWidth: 760,
         px: 4,
+        margin: "auto",
       }}
     >
       <Box
