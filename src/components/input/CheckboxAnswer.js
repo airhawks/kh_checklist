@@ -26,7 +26,7 @@ export default function CheckboxAnswer({
   textHint,
   name: propName,
   formLabel,
-  defaultValue = [],  
+  defaultValue = [],
   inline = true,
 }) {
   const keys = Object.keys(options);
@@ -57,7 +57,7 @@ export default function CheckboxAnswer({
                   ? {}
                   : {
                       mb: 3,
-                      maxWidth: 216,
+                      maxWidth: 196,
                     }
               }
               key={key}
@@ -73,8 +73,8 @@ export default function CheckboxAnswer({
                   <Card raised>
                     <CardMedia
                       sx={{
-                        height: 216,
-                        width: 216,
+                        height: 196,
+                        width: 196,
                         alignItems: "center",
                         justifyContent: "center",
                       }}
@@ -85,7 +85,7 @@ export default function CheckboxAnswer({
                       sx={{
                         pt: 2,
                         mb: -2,
-                        maxWidth: 216,
+                        maxWidth: 196,
                       }}
                     >
                       <Typography

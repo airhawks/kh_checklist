@@ -16,16 +16,16 @@ export default function RadioGroupAnswer({
   options = {
     test: {
       label: "value",
-      src: `https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e`
+      src: `https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e`,
     },
-    test2: { label: "another value" }
+    test2: { label: "another value" },
   },
   onChange,
   name,
   textHint,
   value,
   formlabel,
-  inline = false
+  inline = false,
 }) {
   const keys = Object.keys(options);
   return (
@@ -55,7 +55,7 @@ export default function RadioGroupAnswer({
                   ? {}
                   : {
                       mb: 3,
-                      maxWidth: 216
+                      maxWidth: 196,
                     }
               }
               key={key}
@@ -65,8 +65,8 @@ export default function RadioGroupAnswer({
                   <Card raised={true}>
                     <CardMedia
                       sx={{
-                        height: 216,
-                        width: 216
+                        height: 196,
+                        width: 196,
                       }}
                       image={options[key].src}
                       title="green iguana"
@@ -74,7 +74,7 @@ export default function RadioGroupAnswer({
                     <CardContent
                       sx={{
                         pt: 2,
-                        mb: -2
+                        mb: -2,
                       }}
                     >
                       <Typography
