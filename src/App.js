@@ -78,24 +78,26 @@ export default function App() {
         {intakeStatus === Status.Started ? <IntakeForm /> : null}
 
         {intakeStatus === Status.Completed ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-end",
-              width: 1,
-              mb: 2,
-            }}
-          >
-            <Button
-              variant="outlined"
-              onClick={() => onChangeStatus(Status.Started)}
-              startIcon={<EditIcon />}
+          <>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                width: 1,
+                mb: 2,
+              }}
             >
-              Project Details
-            </Button>
-            <ResetButton />
-            <Button onClick={() => setShowSummary(true)}>Summary</Button>
+              <Button
+                variant="outlined"
+                onClick={() => onChangeStatus(Status.Started)}
+                startIcon={<EditIcon />}
+              >
+                Project Details
+              </Button>
+              <ResetButton />
+              <Button onClick={() => setShowSummary(true)}>Summary</Button>
+            </Box>
 
             <hr />
             {showSummary ? (
@@ -103,33 +105,35 @@ export default function App() {
             ) : (
               <RoomsManager />
             )}
-          </Box>
+          </>
         ) : null}
 
         {/* Curtain editor */}
         {curtainStatus === Status.Started ? <IntakeForm /> : null}
 
         {curtainStatus === Status.Completed ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-end",
-              width: 1,
-              mb: 2,
-            }}
-          >
-            <Button
-              variant="outlined"
-              onClick={() => onChangeCurtainStatus(Status.Started)}
-              startIcon={<EditIcon />}
+          <>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                width: 1,
+                mb: 2,
+              }}
             >
-              Edit Details
-            </Button>
-            <ResetButton isInteriorProject={false} />
+              <Button
+                variant="outlined"
+                onClick={() => onChangeCurtainStatus(Status.Started)}
+                startIcon={<EditIcon />}
+              >
+                Edit Details
+              </Button>
+              <ResetButton isInteriorProject={false} />
+            </Box>
             <hr />
             Summary
-          </Box>
+          </>
         ) : null}
       </Box>
     </Box>
