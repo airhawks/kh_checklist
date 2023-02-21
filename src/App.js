@@ -11,6 +11,7 @@ import RoomsManager from "./RoomsManager";
 import ResetButton from "./components/ResetButton";
 import * as React from "react";
 import ProjectSummary from "./ProjectSummary";
+import { changeCurtainStatus } from "./store/curtainSlice";
 
 export default function App() {
   const [showSummary, setShowSummary] = React.useState(false);
@@ -20,6 +21,10 @@ export default function App() {
   const onChangeStatus = (status) => {
     dispatch(setFormValues(["status", "intakeStatus", status]));
   };
+  const onChangeCurtainStatus = (status) => {
+    dispatch(changeCurtainStatus(status));
+  };
+  console.log({ intakeStatus, curtainStatus });
 
   return (
     <Box
@@ -44,10 +49,12 @@ export default function App() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
               justifyContent: "center",
+              alignItems: "center",
               width: 1,
               mb: 2,
+              gap: 2,
             }}
           >
             <Button
@@ -56,6 +63,14 @@ export default function App() {
               startIcon={<EditIcon />}
             >
               Start Project Intake
+            </Button>
+
+            <Button
+              variant="outlined"
+              onClick={() => onChangeCurtainStatus(Status.Started)}
+              startIcon={<EditIcon />}
+            >
+              Start Curtain Intake
             </Button>
           </Box>
         ) : null}
@@ -106,20 +121,14 @@ export default function App() {
           >
             <Button
               variant="outlined"
-              onClick={() => onChangeStatus(Status.Started)}
+              onClick={() => onChangeCurtainStatus(Status.Started)}
               startIcon={<EditIcon />}
             >
-              Project Details
+              Edit Details
             </Button>
-            <ResetButton />
-            <Button onClick={() => setShowSummary(true)}>Summary</Button>
-
+            <ResetButton isInteriorProject={false} />
             <hr />
-            {showSummary ? (
-              <ProjectSummary onExit={() => setShowSummary(false)} />
-            ) : (
-              <RoomsManager />
-            )}
+            Summary
           </Box>
         ) : null}
       </Box>

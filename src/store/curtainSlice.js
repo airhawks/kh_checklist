@@ -103,11 +103,18 @@ export const curtainSlice = createSlice({
       const [roomType, step, key, value] = payload;
       state[roomType][step][key] = value;
     },
+    changeCurtainStatus: (state, { payload }) => {
+      state.status = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setStandardRoomValues, setBedOrBathRoomValues, reset } =
-  curtainSlice.actions;
+export const {
+  setStandardRoomValues,
+  setBedOrBathRoomValues,
+  reset,
+  changeCurtainStatus,
+} = curtainSlice.actions;
 
 export default curtainSlice.reducer;
