@@ -64,12 +64,12 @@ export default function BathroomOther({ data, handleInputChange }) {
           <Typography variant="body2" component="div">
             <ul style={{ marginTop: 4 }}>
               {[
-                <Typography variant="body2" component="div">
+                <Typography key={0} variant="body2" component="div">
                   <b>Flow restrictors</b> - adjusts flow of water + gives
                   voluminous flow 2) air shower - air mixed with water to make
                   water drops lighter but voluminous
                 </Typography>,
-                <Typography variant="body2" component="div">
+                <Typography key={1} variant="body2" component="div">
                   <b>Flow restrictors</b> - adjusts flow of water + gives
                   voluminous flow 2) air shower - air mixed with water to make
                   water drops lighter but voluminous
@@ -96,11 +96,11 @@ export default function BathroomOther({ data, handleInputChange }) {
           <Typography variant="body2" component="div">
             <ul style={{ marginTop: 4 }}>
               {[
-                <Typography variant="body2" component="div">
+                <Typography key={0} variant="body2" component="div">
                   <b>Grab Bars</b> - Required while using the toilet & taking a
                   shower.
                 </Typography>,
-                <Typography variant="body2" component="div">
+                <Typography key={1} variant="body2" component="div">
                   <b>Folding seat</b> - While taking shower, using towel &
                   changing clothes
                 </Typography>,

@@ -46,8 +46,8 @@ export default function BedroomWardrobe({
         text={
           <>
             <Typography variant="body2" component="div">
-              Sliding door wardrobes don't require much space in front of them,
-              as their doors slide from side to side.
+              Sliding door wardrobes don&apos;t require much space in front of
+              them, as their doors slide from side to side.
             </Typography>
             <Typography variant="body2" component="div" sx={{ mt: 1 }}>
               Hinged Door has ability to fully open the doors without any
@@ -89,8 +89,8 @@ export default function BedroomWardrobe({
             <Typography variant="body2" component="div">
               A loft offers ample storage space for lesser-used home materials
               such as soft furnishing items. It utilizes extra space above the
-              wardrobe's main frame and efficiently takes care of every storage
-              need.
+              wardrobe&apos;s main frame and efficiently takes care of every
+              storage need.
             </Typography>
             <Typography variant="body2" component="div" sx={{ mt: 1 }}>
               The highlighted wall is going to be different from other 3 or 2

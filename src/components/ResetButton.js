@@ -6,9 +6,10 @@ import { useDispatch } from "react-redux";
 import DialogTitle from "@mui/material/DialogTitle";
 import { reset } from "../store/projectIntakeSlice";
 import { reset as resetRooms } from "../store/roomsDetailSlice";
+import { reset as resetCurtains } from "../store/curtainSlice";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function ResetButton() {
+export default function ResetButton({ isInteriorProject = true }) {
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
 
@@ -20,8 +21,12 @@ export default function ResetButton() {
     setOpen(false);
   };
   const onClickYes = () => {
-    dispatch(reset());
-    dispatch(resetRooms());
+    if (isInteriorProject) {
+      dispatch(reset());
+      dispatch(resetRooms());
+    } else {
+      dispatch(resetCurtains());
+    }
     handleClose();
   };
 

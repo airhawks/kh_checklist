@@ -8,45 +8,45 @@ const initialState = {
     roomNamesAndBathrooms: [
       { hasBathroom: true, roomName: "Master bedroom" },
       { hasBathroom: false, roomName: "Children's bedroom" },
-      { hasBathroom: true, roomName: "Children's bedroom 2" }
+      { hasBathroom: true, roomName: "Children's bedroom 2" },
     ],
-    hasCommonBathroom: "Yes"
+    hasCommonBathroom: "Yes",
   },
   location: {
     city: "Gurugram",
     state: "",
-    pincode: ""
+    pincode: "",
   },
   newOrOld: {
     projectType: "",
-    workRequired: []
+    workRequired: [],
   },
   designAndPlanning: {
-    planner: ""
+    planner: "",
   },
   scopeOfWork: {
-    roomsRequireWork: []
+    roomsRequireWork: [],
   },
   status: {
-    intakeStatus: Status.Emtpy,
-    [RoomType.Kitchen]: Status.Emtpy,
-    [RoomType.LivingRoom]: Status.Emtpy,
-    [RoomType.CommonBathroom]: Status.Emtpy,
+    intakeStatus: Status.Empty,
+    [RoomType.Kitchen]: Status.Empty,
+    [RoomType.LivingRoom]: Status.Empty,
+    [RoomType.CommonBathroom]: Status.Empty,
     roomsAndBathroomsStatus: [
       {
         [RoomType.Bedroom]: Status.Empty,
-        [RoomType.Bathroom]: Status.Empty
+        [RoomType.Bathroom]: Status.Empty,
       },
       {
         [RoomType.Bedroom]: Status.Empty,
-        [RoomType.Bathroom]: Status.Empty
+        [RoomType.Bathroom]: Status.Empty,
       },
       {
         [RoomType.Bedroom]: Status.Empty,
-        [RoomType.Bathroom]: Status.Empty
-      }
-    ]
-  }
+        [RoomType.Bathroom]: Status.Empty,
+      },
+    ],
+  },
 };
 
 export const projectIntakeSlice = createSlice({
@@ -83,15 +83,15 @@ export const projectIntakeSlice = createSlice({
         updatedRoomNamesAndBathrooms = [
           {
             hasBathroom: false,
-            roomName: "Bedroom"
-          }
+            roomName: "Bedroom",
+          },
         ];
         state.projectType.hasCommonBathroom = "Yes";
         updatedRoomsAndBathroomsStatus = [
           {
             [RoomType.Bedroom]: Status.Empty,
-            [RoomType.Bathroom]: Status.Empty
-          }
+            [RoomType.Bathroom]: Status.Empty,
+          },
         ];
       } else if (numberOfBedRooms > currentLength) {
         updatedRoomNamesAndBathrooms = roomNamesAndBathrooms.concat(
@@ -100,7 +100,7 @@ export const projectIntakeSlice = createSlice({
         updatedRoomsAndBathroomsStatus = roomsAndBathroomsStatus.concat(
           Array.from({ length: numberOfBedRooms - currentLength }, () => ({
             [RoomType.Bedroom]: Status.Empty,
-            [RoomType.Bathroom]: Status.Empty
+            [RoomType.Bathroom]: Status.Empty,
           }))
         );
       } else {
@@ -123,15 +123,12 @@ export const projectIntakeSlice = createSlice({
       // );
       state.projectType.roomNamesAndBathrooms = updatedRoomNamesAndBathrooms;
       state.status.roomsAndBathroomsStatus = updatedRoomsAndBathroomsStatus;
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
-export const {
-  setFormValues,
-  reset,
-  updateRoomAndBathrooms
-} = projectIntakeSlice.actions;
+export const { setFormValues, reset, updateRoomAndBathrooms } =
+  projectIntakeSlice.actions;
 
 export default projectIntakeSlice.reducer;
