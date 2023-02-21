@@ -15,6 +15,7 @@ import ProjectSummary from "./ProjectSummary";
 export default function App() {
   const [showSummary, setShowSummary] = React.useState(false);
   const { intakeStatus } = useSelector((state) => state.project.status);
+  const curtainStatus = useSelector((state) => state.curtain.status);
   const dispatch = useDispatch();
   const onChangeStatus = (status) => {
     dispatch(setFormValues(["status", "intakeStatus", status]));
@@ -39,15 +40,12 @@ export default function App() {
           width: 1,
         }}
       >
-        {intakeStatus === Status.Started ? (
-          <IntakeForm />
-        ) : (
+        {intakeStatus === Status.Empty && curtainStatus === Status.Empty ? (
           <Box
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent:
-                intakeStatus === Status.Completed ? "flex-end" : "center",
+              justifyContent: "center",
               width: 1,
               mb: 2,
             }}
@@ -57,25 +55,72 @@ export default function App() {
               onClick={() => onChangeStatus(Status.Started)}
               startIcon={<EditIcon />}
             >
-              {intakeStatus === Status.Completed
-                ? "Project Details"
-                : "Start Project Intake"}
+              Start Project Intake
             </Button>
-            {intakeStatus === Status.Completed ? (
-              <>
-                <ResetButton />{" "}
-                <Button onClick={() => setShowSummary(true)}>Summary</Button>
-              </>
-            ) : null}
           </Box>
-        )}
-        <hr />
+        ) : null}
+
+        {intakeStatus === Status.Started ? <IntakeForm /> : null}
+
         {intakeStatus === Status.Completed ? (
-          showSummary ? (
-            <ProjectSummary onExit={() => setShowSummary(false)} />
-          ) : (
-            <RoomsManager />
-          )
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              width: 1,
+              mb: 2,
+            }}
+          >
+            <Button
+              variant="outlined"
+              onClick={() => onChangeStatus(Status.Started)}
+              startIcon={<EditIcon />}
+            >
+              Project Details
+            </Button>
+            <ResetButton />
+            <Button onClick={() => setShowSummary(true)}>Summary</Button>
+
+            <hr />
+            {showSummary ? (
+              <ProjectSummary onExit={() => setShowSummary(false)} />
+            ) : (
+              <RoomsManager />
+            )}
+          </Box>
+        ) : null}
+
+        {/* Curtain editor */}
+        {curtainStatus === Status.Started ? <IntakeForm /> : null}
+
+        {curtainStatus === Status.Completed ? (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              width: 1,
+              mb: 2,
+            }}
+          >
+            <Button
+              variant="outlined"
+              onClick={() => onChangeStatus(Status.Started)}
+              startIcon={<EditIcon />}
+            >
+              Project Details
+            </Button>
+            <ResetButton />
+            <Button onClick={() => setShowSummary(true)}>Summary</Button>
+
+            <hr />
+            {showSummary ? (
+              <ProjectSummary onExit={() => setShowSummary(false)} />
+            ) : (
+              <RoomsManager />
+            )}
+          </Box>
         ) : null}
       </Box>
     </Box>
