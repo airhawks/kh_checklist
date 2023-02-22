@@ -75,7 +75,22 @@ export default function App() {
           </Box>
         ) : null}
 
-        {intakeStatus === Status.Started ? <IntakeForm /> : null}
+        {intakeStatus === Status.Started ? (
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                width: 1,
+                mb: 2,
+              }}
+            >
+              <ResetButton />
+            </Box>
+            <IntakeForm />
+          </Box>
+        ) : null}
 
         {intakeStatus === Status.Completed ? (
           <>
@@ -109,30 +124,33 @@ export default function App() {
         ) : null}
 
         {/* Curtain editor */}
-        {curtainStatus === Status.Started ? <IntakeForm /> : null}
-
-        {curtainStatus === Status.Completed ? (
+        {process.env.NODE_ENV !== "production" ? (
           <>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                width: 1,
-                mb: 2,
-              }}
-            >
-              <Button
-                variant="outlined"
-                onClick={() => onChangeCurtainStatus(Status.Started)}
-                startIcon={<EditIcon />}
-              >
-                Edit Details
-              </Button>
-              <ResetButton isInteriorProject={false} />
-            </Box>
-            <hr />
-            Summary
+            {curtainStatus === Status.Started ? <IntakeForm /> : null}
+            {curtainStatus === Status.Completed ? (
+              <>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-end",
+                    width: 1,
+                    mb: 2,
+                  }}
+                >
+                  <Button
+                    variant="outlined"
+                    onClick={() => onChangeCurtainStatus(Status.Started)}
+                    startIcon={<EditIcon />}
+                  >
+                    Edit Details
+                  </Button>
+                  <ResetButton />
+                </Box>
+                <hr />
+                Summary
+              </>
+            ) : null}
           </>
         ) : null}
       </Box>

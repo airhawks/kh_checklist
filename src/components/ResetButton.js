@@ -9,7 +9,7 @@ import { reset as resetRooms } from "../store/roomsDetailSlice";
 import { reset as resetCurtains } from "../store/curtainSlice";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function ResetButton({ isInteriorProject = true }) {
+export default function ResetButton() {
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch();
 
@@ -21,12 +21,9 @@ export default function ResetButton({ isInteriorProject = true }) {
     setOpen(false);
   };
   const onClickYes = () => {
-    if (isInteriorProject) {
-      dispatch(reset());
-      dispatch(resetRooms());
-    } else {
-      dispatch(resetCurtains());
-    }
+    dispatch(reset());
+    dispatch(resetRooms());
+    dispatch(resetCurtains());
     handleClose();
   };
 
