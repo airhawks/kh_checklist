@@ -64,14 +64,15 @@ export default function App() {
             >
               Start Project Intake
             </Button>
-
-            <Button
-              variant="outlined"
-              onClick={() => onChangeCurtainStatus(Status.Started)}
-              startIcon={<EditIcon />}
-            >
-              Start Curtain Intake
-            </Button>
+            {process.env.NODE_ENV !== "production" ? (
+              <Button
+                variant="outlined"
+                onClick={() => onChangeCurtainStatus(Status.Started)}
+                startIcon={<EditIcon />}
+              >
+                Start Curtain Intake
+              </Button>
+            ) : null}
           </Box>
         ) : null}
 
