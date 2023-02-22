@@ -166,12 +166,19 @@ export const roomsDetailSlice = createSlice({
     },
     setBedOrBathRoomValues: (state, { payload }) => {
       const [roomType, roomName, step, key, value] = payload;
-      state[roomType][roomName] =
+      let roomState =
         state[roomType][roomName] ||
         (roomType === RoomType.Bedroom
           ? initialBedroomState
           : initialBathroomState);
-      state[roomType][roomName][step][key] = value;
+      roomState = {
+        ...roomState,
+        [step]: {
+          ...roomState[step],
+          [key]: value,
+        },
+      };
+      state[roomType][roomName] = roomState;
     },
     reset: () => initialState,
   },

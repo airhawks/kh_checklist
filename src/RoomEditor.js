@@ -126,9 +126,9 @@ export default function RoomEditor({
           <>
             <Box sx={{ flex: "1 1 auto" }} />
             <Button onClick={() => dispatch(reset())}>Reset</Button>
-            <Button onClick={onExit}>Exit Editing</Button>
           </>
         ) : null}
+        <Button onClick={onExit}>Go to Dashboard</Button>
       </Box>
 
       <RoomEditorComponent
