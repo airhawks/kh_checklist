@@ -122,13 +122,14 @@ export default function RoomEditor({
         }}
       >
         <Typography variant="h5">{userFacingRoomName}</Typography>
-        {process.env.NODE_ENV !== "production" ? (
-          <>
-            <Box sx={{ flex: "1 1 auto" }} />
+
+        <>
+          <Box sx={{ flex: "1 1 auto" }} />
+          {process.env.NODE_ENV !== "production" ? (
             <Button onClick={() => dispatch(reset())}>Reset</Button>
-          </>
-        ) : null}
-        <Button onClick={onExit}>Go to Dashboard</Button>
+          ) : null}
+          <Button onClick={onExit}>Go to Dashboard</Button>
+        </>
       </Box>
 
       <RoomEditorComponent
