@@ -12,6 +12,12 @@ import ResetButton from "./components/ResetButton";
 import * as React from "react";
 import ProjectSummary from "./ProjectSummary";
 import { changeCurtainStatus } from "./store/curtainSlice";
+import { getAuth, signOut } from "firebase/auth";
+
+const logout = () => {
+  const auth = getAuth();
+  signOut(auth);
+};
 
 export default function App() {
   const [showSummary, setShowSummary] = React.useState(false);
@@ -73,6 +79,9 @@ export default function App() {
                 Start Curtain Intake
               </Button>
             ) : null}
+            <Button variant="outlined" onClick={logout}>
+              Logout
+            </Button>
           </Box>
         ) : null}
 

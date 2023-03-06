@@ -8,6 +8,12 @@ import { reset } from "../store/projectIntakeSlice";
 import { reset as resetRooms } from "../store/roomsDetailSlice";
 import { reset as resetCurtains } from "../store/curtainSlice";
 import AddIcon from "@mui/icons-material/Add";
+import { getAuth, signOut } from "firebase/auth";
+
+const logout = () => {
+  const auth = getAuth();
+  signOut(auth);
+};
 
 export default function ResetButton() {
   const [open, setOpen] = React.useState(false);
@@ -31,6 +37,9 @@ export default function ResetButton() {
     <div>
       <Button onClick={handleClickOpen} startIcon={<AddIcon />}>
         New Project
+      </Button>
+      <Button variant="outlined" onClick={logout}>
+        Logout
       </Button>
       <Dialog
         open={open}
