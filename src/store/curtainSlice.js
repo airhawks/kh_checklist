@@ -59,8 +59,20 @@ const woodenOrZebraBlindsOptions = {
   },
 };
 
-export const initialState = {
+const initialCommonWindowOptions = {
+  windowName: "New Window Name",
   status: Status.Empty,
+  curtainsOrBlinds: "",
+  style: "",
+  otherOptions: {
+    curtainsOptions,
+    romanBlindsOptions,
+    woodenOrZebraBlindsOptions,
+  },
+};
+
+export const initialState = {
+  intakeStatus: Status.Empty,
   clientDetails: {
     name: "",
     phone: "",
@@ -71,50 +83,47 @@ export const initialState = {
       pincode: "",
     },
   },
-  windows: [
-    {
-      roomName: "",
-      curtainsOrBlinds: "",
-      style: "",
-      otherOptions: {},
-    },
-  ],
+  windows: [{ ...initialCommonWindowOptions }],
 };
 
 export const curtainSlice = createSlice({
   name: "curtain",
   initialState,
   reducers: {
-    setStandardRoomValues: (state, { payload }) => {
-      const [roomType, step, key, value] = payload;
-      state[roomType][step][key] = value;
+    setClientDetails: (state, { payload }) => {
+      const [key, value] = payload;
+      state["clientDetails"][key] = value;
     },
-    setBedOrBathRoomValues: (state, { payload }) => {
-      const [roomType, roomName, step, key, value] = payload;
-      state[roomType][roomName] =
-        state[roomType][roomName] ||
-        (roomType === RoomType.Bedroom
-          ? initialBedroomState
-          : initialBathroomState);
-      state[roomType][roomName][step][key] = value;
+    setWindowValues: (state, { payload }) => {
+      const [index, key, value] = payload;
+      state.windows[index][key] = value;
+    },
+    setWindowOptionValues: (state, { payload }) => {
+      const [index, option, key, value] = payload;
+      state.windows[index].otherOptions[option][key] = value;
     },
     reset: () => initialState,
-    createNewRoom: (state, { payload }) => {
-      const [roomType, step, key, value] = payload;
-      state[roomType][step][key] = value;
+    addWindow: (state) => {
+      state.windows.push({ ...initialCommonWindowOptions });
+    },
+    onDeleteWindow: (state, { payload }) => {
+      state.windows.splice(payload, 1);
     },
     changeCurtainStatus: (state, { payload }) => {
-      state.status = payload;
+      state.intakeStatus = payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
 export const {
-  setStandardRoomValues,
-  setBedOrBathRoomValues,
+  setClientDetails,
   reset,
   changeCurtainStatus,
+  addWindow,
+  onDeleteWindow,
+  setWindowValues,
+  setWindowOptionValues,
 } = curtainSlice.actions;
 
 export default curtainSlice.reducer;
