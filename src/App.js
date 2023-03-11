@@ -138,7 +138,7 @@ export default function App() {
         {/* */}
         {/* Curtain editor */}
         {/* */}
-        {process.env.NODE_ENV !== "production" ? (
+        {true || process.env.NODE_ENV !== "production" ? (
           <>
             {curtainStatus === Status.Started ? (
               <Box>
