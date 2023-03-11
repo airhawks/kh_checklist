@@ -60,7 +60,7 @@ const woodenOrZebraBlindsOptions = {
 };
 
 export const initialState = {
-  status: Status.Empty,
+  intakeStatus: Status.Empty,
   clientDetails: {
     name: "",
     phone: "",
@@ -85,9 +85,9 @@ export const curtainSlice = createSlice({
   name: "curtain",
   initialState,
   reducers: {
-    setStandardRoomValues: (state, { payload }) => {
-      const [roomType, step, key, value] = payload;
-      state[roomType][step][key] = value;
+    setClientDetails: (state, { payload }) => {
+      const [key, value] = payload;
+      state["clientDetails"][key] = value;
     },
     setBedOrBathRoomValues: (state, { payload }) => {
       const [roomType, roomName, step, key, value] = payload;
@@ -104,14 +104,14 @@ export const curtainSlice = createSlice({
       state[roomType][step][key] = value;
     },
     changeCurtainStatus: (state, { payload }) => {
-      state.status = payload;
+      state.intakeStatus = payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
 export const {
-  setStandardRoomValues,
+  setClientDetails,
   setBedOrBathRoomValues,
   reset,
   changeCurtainStatus,
