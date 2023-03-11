@@ -12,6 +12,7 @@ import ResetButton from "./components/ResetButton";
 import * as React from "react";
 import ProjectSummary from "./ProjectSummary";
 import CurtainIntake from "./components/Curtain/CurtainIntake";
+import CurtainDashboard from "./components/Curtain/CurtainDashboard";
 import { changeCurtainStatus } from "./store/curtainSlice";
 import { getAuth, signOut } from "firebase/auth";
 
@@ -134,7 +135,9 @@ export default function App() {
           </>
         ) : null}
 
+        {/* */}
         {/* Curtain editor */}
+        {/* */}
         {process.env.NODE_ENV !== "production" ? (
           <>
             {curtainStatus === Status.Started ? (
@@ -155,30 +158,35 @@ export default function App() {
                 />
               </Box>
             ) : null}
+
             {curtainStatus === Status.Completed ? (
               <>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    width: 1,
-                    mb: 2,
-                  }}
-                >
-                  <Button
-                    variant="outlined"
-                    onClick={() => onChangeCurtainStatus(Status.Started)}
-                    startIcon={<EditIcon />}
+                {showSummary ? null : (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "flex-end",
+                      width: 1,
+                      mb: 2,
+                    }}
                   >
-                    Edit Details
-                  </Button>
-                  <ResetButton />
-                  <Button onClick={() => setShowSummary(true)}>Summary</Button>
-                </Box>
+                    <Button
+                      variant="outlined"
+                      onClick={() => onChangeCurtainStatus(Status.Started)}
+                      startIcon={<EditIcon />}
+                    >
+                      Edit Details
+                    </Button>
+                    <ResetButton />
+                    <Button onClick={() => setShowSummary(true)}>
+                      Summary
+                    </Button>
+                  </Box>
+                )}
                 <hr />
 
-                {showSummary ? "Summary" : "Dashboard"}
+                {showSummary ? "Summary" : <CurtainDashboard />}
               </>
             ) : null}
           </>
