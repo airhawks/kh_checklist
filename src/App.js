@@ -71,15 +71,15 @@ export default function App() {
             >
               Start Project Intake
             </Button>
-            {process.env.NODE_ENV !== "production" ? (
-              <Button
-                variant="outlined"
-                onClick={() => onChangeCurtainStatus(Status.Started)}
-                startIcon={<EditIcon />}
-              >
-                Start Curtain Intake
-              </Button>
-            ) : null}
+
+            <Button
+              variant="outlined"
+              onClick={() => onChangeCurtainStatus(Status.Started)}
+              startIcon={<EditIcon />}
+            >
+              Start Curtain Intake
+            </Button>
+
             <Button variant="outlined" onClick={logout}>
               Logout
             </Button>
@@ -135,9 +135,29 @@ export default function App() {
         {/* */}
         {/* Curtain editor */}
         {/* */}
-        <>
-          {curtainStatus === Status.Started ? (
-            <Box>
+
+        {curtainStatus === Status.Started ? (
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                width: 1,
+                mb: 2,
+              }}
+            >
+              <ResetButton />
+            </Box>
+            <CurtainIntake
+              onComplete={() => onChangeCurtainStatus(Status.Completed)}
+            />
+          </Box>
+        ) : null}
+
+        {curtainStatus === Status.Completed ? (
+          <>
+            {showSummary ? null : (
               <Box
                 sx={{
                   display: "flex",
@@ -147,43 +167,22 @@ export default function App() {
                   mb: 2,
                 }}
               >
-                <ResetButton />
-              </Box>
-              <CurtainIntake
-                onComplete={() => onChangeCurtainStatus(Status.Completed)}
-              />
-            </Box>
-          ) : null}
-
-          {curtainStatus === Status.Completed ? (
-            <>
-              {showSummary ? null : (
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    width: 1,
-                    mb: 2,
-                  }}
+                <Button
+                  variant="outlined"
+                  onClick={() => onChangeCurtainStatus(Status.Started)}
+                  startIcon={<EditIcon />}
                 >
-                  <Button
-                    variant="outlined"
-                    onClick={() => onChangeCurtainStatus(Status.Started)}
-                    startIcon={<EditIcon />}
-                  >
-                    Edit Details
-                  </Button>
-                  <ResetButton />
-                  <Button onClick={() => setShowSummary(true)}>Summary</Button>
-                </Box>
-              )}
-              <hr />
+                  Edit Details
+                </Button>
+                <ResetButton />
+                <Button onClick={() => setShowSummary(true)}>Summary</Button>
+              </Box>
+            )}
+            <hr />
 
-              {showSummary ? "Summary" : <CurtainDashboard />}
-            </>
-          ) : null}
-        </>
+            {showSummary ? "Summary" : <CurtainDashboard />}
+          </>
+        ) : null}
       </Box>
     </Box>
   );
